@@ -1,0 +1,46 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="/css/main.css">
+   </head>
+<body>
+   <form> 
+	<input type="text" name="username"> 
+	<input type="text" name="password"> 
+	<button          type="submit"> Send </button> </form>
+</body>
+</html>
+
+<script type="text/javascript">
+	$('.btn').on('click', function() {
+		var V_username = $("input#username").val();
+		var P_Pasword = $("input#password").val();
+		alert(P_Pasword);
+	//	var V_username="Sumatjn@gmail.com";
+	//	var P_Pasword="1234567890";
+		//window.location.href='http://localhost:4000/Userdetails';
+		$.ajax({
+		  type: 'POST',
+		  url: '/api/auth/login',
+		  data: { email:V_username,password:P_Pasword},
+		  success: function(resultData) {
+			 alert('D');
+			// window.location.href='http://localhost:4000/Userdetails';
+			 
+	
+		  },
+		  error: function(){
+								alert('No data');
+							}
+		});
+	});
+	</script>
+
+</body>
+</html>
