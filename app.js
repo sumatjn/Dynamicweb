@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const db = require('./db');
+const port = process.env.PORT || 4000;
 //var morgan = require('morgan');
-const port = 4000;
+//const port = 4000;
 
 var menu = [
     {'name':'Home','link':'/'},
